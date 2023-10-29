@@ -109,7 +109,6 @@ public class Main {
  
 ## 관련 사이트
 - https://www.acmicpc.net/step/53
-- https://www.geeksforgeeks.org/practice-questions-time-complexity-analysis/
 
 ## 온라인 코딩 테스트 사이트
 - https://codeshare.io/WdQPkE
