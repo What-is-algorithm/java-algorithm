@@ -76,13 +76,52 @@ public class Main {
 
 ### 왜 명시된 최악의 시간 복잡도와 다르게 일반적으로 두 자료구조가 빠르다고 이야기하는 걸까?
 1. 이진 탐색 트리 : 균형 이진 탐색 트리와 비균형 이진 탐색 트리로 나뉘기 때문
-- 균형 이진 탐색 트리
-- 비균형 이진 탐색 트리
+- 균형 이진 탐색 트리 : O(log n)
+    - 트리의 어떤 두 하위 트리의 높이 차이가 특정 값을 넘지 않는 트리(= 트리가 균형을 유지)
+    - ex. AVL 트리 : 어떤 두 하위 트리의 높이 차이가 1을 초과하지 않도록 유지
+    - ex. Red-Black 트리 : 노드 색깔(Red, Black)을 조절하여 균형을 유지 
+- 비균형 이진 탐색 트리 : O(n)
+    - 트리가 한 쪽으로 치우쳐져 있거나 일렬로 연결된 형태(ex. Linked-List)
+    - 트리의 모든 노드를 거쳐야 탐색 ~ 삭제가 가능함
+
+#### Linked-List의 시간 복잡도
+- https://velog.io/@eunbileeme/Java-ArrayList-vs-LinkedList
+
 2. 해시 테이블 : 아래의 여러 이유 때문
+- 충돌(Collision) : 여러 키가 동일한 해시 값을 가질 때, 발생하는 현상
+    - 충돌이 발생하면 해당 위치에 여러 항목을 저장해야 함
+    - 대표적인 해결 방법: 체이닝(Chaining), 각 버킷에 Linked-List를 사용하여 항목들을 저장
+- 최악의 경우 : 모든 키가 동일한 해시 값을 가지는 상황
+    - 모든 element가 하나의 Linked-List에 저장
+    - 탐색 ~ 삽입이 Linked-List에 비례하여 최악의 시간 복잡도 O(n)을 가짐
+- 리사이징(Resizing)
+    - 해시 테이블의 크기를 동적으로 저정
+    - 테이블이 가득 차거나 충돌이 너무 많아지면 테이블의 크기를 늘리는 방법
+    - 일반적으로 O(n)의 시간이 걸림
+
+### 따라서..
+
+시간 복잡도는 기본적으로 최악의 경우를 고려하여 산출한 개념
+
+하지만, 위 경우를 포함하여 **전체적인 알고리즘의 성능**을 의미
+
+따라서 최악의 성능뿐만 아니라 평균적인 성능(Average Case : 빅-세타 표기법) 또는 최선의 성능(Best Case : 빅-오메가 표기법)에 대해서도 생각해야!
+- "시간 복잡도를 고려한다"
+    - "알고리즘의 전체적인 성능을 고려한다."
+ 
+## 관련 기출 문제
+- https://www.acmicpc.net/step/53
+
 
 ### 참고 자료
+#### 관련 서적(feat. GPT)
+- Introduction to Algorithms
+- Data Structures and Algorithm Analysis in Java
+- The Art of Computer Programming
+- Algorithm Design Manual
 #### 개념
 - https://www.bigocheatsheet.com/
 - https://yoongrammer.tistory.com/79
+- https://velog.io/@agugu95/%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EA%B7%A0%ED%98%95-RED-BALCKAVL
 #### 실전
 - https://www.geeksforgeeks.org/practice-questions-time-complexity-analysis/
