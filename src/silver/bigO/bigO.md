@@ -109,9 +109,9 @@ public class Main {
 - "시간 복잡도를 고려한다"
     - "알고리즘의 전체적인 성능을 고려한다."
  
-## 관련 기출 문제
+## 관련 사이트
 - https://www.acmicpc.net/step/53
-
+- https://www.geeksforgeeks.org/practice-questions-time-complexity-analysis/
 
 ### 참고 자료
 #### 관련 서적(feat. GPT)
