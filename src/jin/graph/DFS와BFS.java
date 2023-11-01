@@ -5,7 +5,7 @@ import java.util.*;
 
 // [S2] 1260. DFS와 BFS
 public class DFS와BFS {
-    static boolean[] dfsVistied;
+    static boolean[] dfsVisited;
     static boolean[] bfsVisited;
     static List<List<Integer>> graph;
 
@@ -18,7 +18,7 @@ public class DFS와BFS {
         final int M = Integer.parseInt(st.nextToken());
         final int V = Integer.parseInt(st.nextToken());
 
-        dfsVistied = new boolean[N+1];
+        dfsVisited = new boolean[N+1];
         bfsVisited = new boolean[N+1];
         graph = new ArrayList<>();
 
@@ -45,10 +45,10 @@ public class DFS와BFS {
     }
 
     private static void dfs(int start) {
-        dfsVistied[start] = true;
+        dfsVisited[start] = true;
         System.out.printf("%d ", start);
         for (int node : graph.get(start)) {
-            if (!dfsVistied[node]) {
+            if (!dfsVisited[node]) {
                 dfs(node);
             }
         }
