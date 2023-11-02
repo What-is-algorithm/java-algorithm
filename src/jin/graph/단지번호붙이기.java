@@ -8,6 +8,12 @@ import java.util.Collections;
 import java.util.List;
 
 // [S1] 2667. 단지번호붙이기
+// 문제에 주어진 그래프에 해당하는 이중 배열 만들기
+// 답 출력을 위한 배열 만들기 <- 오름차순을 해야 하기 때문
+// graph[i][j] == 1 이면 dfs 실행하여 얻은 cnt를 배열에 담기 -> cnt = 0 으로 초기화 (다음 dfs를 돌 때 연결된 개수를 구해야 하기 때문)
+// dfs 실행 순서
+// 조건 1. 동남서북 방향으로 탐색할 때 0 <= ny,ny < N 일 경우만 탐색 시작
+// 조건 2. graph[ny][nx] == 1 일 경우만 탐색 -> 이미 방문한 곳은 다른 숫자로 처리(-1)
 public class 단지번호붙이기 {
     static int[][] graph;
     static int cnt;
