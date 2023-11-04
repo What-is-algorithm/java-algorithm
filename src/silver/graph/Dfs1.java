@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class dfs1 {
+public class Dfs1 {
     public static ArrayList<ArrayList<Integer>> graph = new ArrayList<>(); // 그래프
     public static boolean[] visited; // 방문 기록
     public static int[] result;
