@@ -12,6 +12,7 @@ public class Dfs2 {
     public static boolean[] visited; // 방문 기록
     public static int[] result;
     public static int idx;
+
     // O(m log m) 또는 O(m log n)
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -58,7 +59,7 @@ public class Dfs2 {
         }
 
         /*
-         * [[], [2, 4], [1, 3, 4], [2, 4], [1, 2, 3], []]
+         * [[], [4, 2], [4, 3, 1], [4, 2], [3, 2, 1], []]
          */
 
         // 3. 이웃 정점(노드)들을 내림차순으로 정렬
@@ -76,7 +77,7 @@ public class Dfs2 {
 
         // 6. 출력
         // O(n)
-        for (int i = 1; i <= n; i ++) {
+        for (int i = 1; i <= n; i++) {
             System.out.println(result[i]);
         }
         br.close();
@@ -84,7 +85,7 @@ public class Dfs2 {
 
     private static void dfs(int node) {
         visited[node] = true;
-        idx ++;
+        idx++;
         result[node] = idx;
 
         for (int adjNode : graph.get(node)) {
