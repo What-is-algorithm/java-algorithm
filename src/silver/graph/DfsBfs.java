@@ -21,7 +21,6 @@ public class DfsBfs {
             graph.add(new ArrayList<>());
         }
 
-        // 2. 그래프에 값 추가
         for (int i = 0; i < m; i++) {
             st = new StringTokenizer(br.readLine());
 
@@ -29,29 +28,29 @@ public class DfsBfs {
             int node2 = Integer.parseInt(st.nextToken());
 
             graph.get(node1).add(node2);
-            graph.get(node2).add(node1); // 양방향
+            graph.get(node2).add(node1);
         }
 
         /*
-        * [[], [2, 3, 4], [1, 4], [1, 4], [1, 2, 3]]
-        */
+         * [[], [2, 3, 4], [1, 4], [1, 4], [1, 2, 3]]
+         */
 
-        // 3. 이웃 정점들을 오름차순으로 정렬
+        // 2. 이웃 정점들을 오름차순으로 정렬
         for (int i = 1; i <= n; i++) {
             Collections.sort(graph.get(i));
         }
 
-        // 4. 방문 유무 초기화
+        // 3. 방문 유무 초기화
         visited = new boolean[n + 1];
 
-        // 5. dfs
+        // 4. dfs
         dfs(v);
         sb.append('\n');
 
-        // 6. 방문 유무 재초기화
+        // 5. 방문 유무 재초기화
         Arrays.fill(visited, false);
 
-        // 7. bfs
+        // 6. bfs
         bfs(v);
 
         System.out.println(sb);

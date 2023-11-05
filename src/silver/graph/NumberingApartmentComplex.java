@@ -18,8 +18,8 @@ public class NumberingApartmentComplex {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        n = Integer.parseInt(br.readLine()); // 지도의 크기
-        ArrayList<Integer> numList = new ArrayList<>(); // num을 담을 배열
+        n = Integer.parseInt(br.readLine()); // 지도 크기 : n
+        ArrayList<Integer> numList = new ArrayList<>();
 
         // 1. 지도 초기화
         map = new int[n][n];
