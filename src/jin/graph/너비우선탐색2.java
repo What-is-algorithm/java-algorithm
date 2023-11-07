@@ -6,6 +6,12 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 // [S2] 24445. 알고리즘 수업 - 너비 우선 탐색 2
+// 이중리스트 -> 외부 리스트의 인덱스 = 노드, 내부 리스트의 데이터들 = 해당 노드와 연결되어 있는 노드들
+// i번째 줄에는 정점 i의 방문 순서를 출력한다. 시작 정점의 방문 순서는 1이다 -> 방문확인과 순서를 담을 sequence
+// 내림차순
+// bfs
+// 1. 1번 부터 시작 -> 방문 체크(cnt=1) + 큐에 1번 노드 넣기
+// 2. 큐에서 값을 가져와 다음 노드들 방문 체크 -> 방문한적 없는 노드에 ++cnt AND 큐에 넣기
 public class 너비우선탐색2 {
     static List<List<Integer>> graph;
     static int[] seq;

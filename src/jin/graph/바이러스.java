@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 // [S3] 2606. 바이러스
+// 이중리스트 -> 외부 리스트의 인덱스 = 노드, 내부 리스트의 데이터들 = 해당 노드와 연결되어 있는 노드들
+// 1번을 시작으로 dfs
+// 1. 탐색하며 방문한 곳을 배열을 통해 기록
+// 2. 기록한 배열 중 방문한 곳의 개수를 합한다
 public class 바이러스 {
     static int cnt = 0;
     static int[] visited;

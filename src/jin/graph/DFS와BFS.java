@@ -4,6 +4,10 @@ import java.io.*;
 import java.util.*;
 
 // [S2] 1260. DFS와 BFS
+// 이중리스트 -> 외부 리스트의 인덱스 = 노드, 내부 리스트의 데이터들 = 해당 노드와 연결되어 있는 노드들
+// dfs 출력(printf) -> println -> bfs 출력
+// 출력 시점은 방문을 했다는 것을 기록했을 때
+// 방문용 배열을 bfs, dfs 따로 만들기
 public class DFS와BFS {
     static boolean[] dfsVisited;
     static boolean[] bfsVisited;
