@@ -22,7 +22,7 @@ public class SnakeAndLadderGame {
         board = new int[101];
         visited = new int[101];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < board.length; i++) {
             board[i] = i; // idx = value
         }
 
@@ -57,6 +57,9 @@ public class SnakeAndLadderGame {
     private static int bfs(int start) {
         Queue<Integer> q = new LinkedList<>();
         q.offer(start);
+        // visited 기준 1 ~ 6은 1(= 첫 번째로 방문했다는 의미) 표기가 되어야 함
+        // 하지만, 1일 경우 1을 제외한 2 ~ 6에 2가 저장이 됨
+        // 따라서 visited = 0;
         visited[start] = 1;
 
         // !q.isEmpty()처럼 조건이 성립할 때 실행되는 것이 아닌, 항상 실행되는 반복문
