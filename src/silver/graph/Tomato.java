@@ -13,9 +13,9 @@ public class Tomato {
     // private static boolean[][] visited;
     private static final int[] dx = {-1, 0, 1, 0};
     private static final int[] dy = {0, 1, 0, -1};
+    private static final Queue<int[]> q = new LinkedList<>();
     private static int x, y;
     private static int[][] map;
-    private static final Queue<int[]> q = new LinkedList<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
