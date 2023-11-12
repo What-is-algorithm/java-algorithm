@@ -13,11 +13,11 @@ public class NightShift {
     // 따라서 탐색 가능한 모든 경우의 수로 구성
     private static final int[] dx = {2, 2, -2, -2, 1, 1, -1, -1};
     private static final int[] dy = {1, -1, 1, -1, 2, -2, 2, -2};
+    private static final StringBuilder sb = new StringBuilder();
     private static int[][] map;
     private static boolean[][] visited;
     private static int l;
     private static int sX, sY, dX, dY;
-    private static final StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -62,7 +62,7 @@ public class NightShift {
             int cy = point[1];
             int distance = 8; // (2, 1), (2, -1), (-2, 1), (-2, -1), ..
 
-            for (int k = 0; k < distance; k ++) {
+            for (int k = 0; k < distance; k++) {
                 int nx = cx + dx[k];
                 int ny = cy + dy[k];
 
