@@ -68,10 +68,10 @@ public class Tomato {
             }
         }
 
-        return checkTomatoNumber();
+        return checkDays();
     }
 
-    private static int checkTomatoNumber() {
+    private static int checkDays() {
         // 연산이 끝나지 않은 상태에서 확인하는 것이므로
         // 0이 아닌 상수 사용
         int max = Integer.MIN_VALUE;
