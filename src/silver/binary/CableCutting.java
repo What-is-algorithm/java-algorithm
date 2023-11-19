@@ -46,7 +46,7 @@ public class CableCutting {
             long m = l + (r - l) / 2;
             int cableCnt = 0;
 
-            for (int i = 0; i < cables.length; i ++) {
+            for (int i = 0; i < cables.length; i++) {
                 cableCnt += (cables[i] / m);
             }
 
