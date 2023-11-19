@@ -44,7 +44,8 @@ public class Tomato1 {
     }
 
     static int bfs() {
-        int max = 0; // max = 3
+        // 이미 토마토가 다 익어있는 경우,
+        int max = 1;
         while (!q.isEmpty()) {
             int[] tmp = q.poll(); // 큐에 익은 토마토의 위치들이 들어가 있다.
             int x = tmp[0];
