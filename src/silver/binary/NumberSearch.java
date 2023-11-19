@@ -32,22 +32,14 @@ public class NumberSearch {
         Arrays.sort(standards);
 
         /*
-        1. 무엇을 찾고자 하는지?
-        -> m개의 수가 담긴 배열(= element)의 수들이 n개의 수가 담긴 배열에 있는지
-        2. 이진 탐색에서 무엇을 기준으로 찾고자 하는지?
-        -> n개의 수가 담긴 배열에서 원소의 인덱스
-        ex) standard = [1, 2, 3, 4, 5] 중 3이 있는지?
-        (1) l = 0, r = 4
-        (2) m = 2
-        (3) 1 == 3? --> x
-        (4) 1 < 3? --> x
-        (5) 1 > 3 --> o
-        (5) l = 0, r = 1
-        ..
+        이진 탐색
+        (1) @param 정렬된 배열(= arr)
+        (2) @param 찾으려는 값(= key)
+        (3) @return key와 일치하는 배열의 인덱스
         */
 
         // 4. 탐색
-        for (int i = 0; i < elements.length; i ++) {
+        for (int i = 0; i < elements.length; i++) {
             System.out.println(getIndex(standards, elements[i]));
         }
 
