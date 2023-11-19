@@ -53,11 +53,11 @@ public class NumberSearch {
         while (l <= r) {
             int m = l + (r - l) / 2;
 
-            if (standards[m] == target) return 1;
-            if (standards[m] < target) {
-                l = m + 1;
-            } else {
+            if (target == standards[m]) return 1;
+            if (target < standards[m]) {
                 r = m - 1;
+            } else {
+                l = m + 1;
             }
         }
 
