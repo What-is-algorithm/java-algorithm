@@ -32,10 +32,9 @@ public class NumberSearch {
         Arrays.sort(standards);
 
         /*
-        이진 탐색
-        (1) @param 정렬된 배열(= arr)
-        (2) @param 찾으려는 값(= key)
-        (3) @return key와 일치하는 배열의 인덱스
+        * (1) @param 정렬된 배열(= arr)
+        * (2) @param 찾으려는 값(= key)
+        * (3) @return key와 일치하는 배열의 인덱스
         */
 
         // 4. 탐색
@@ -45,6 +44,13 @@ public class NumberSearch {
 
         br.close();
     }
+
+    /*
+    * 값 구하기
+    * l : 최소 인덱스 (단, 0부터 시작)
+    * r : 최대 인덱스 (단, 전체 배열의 길이 - 1)
+    * m : 중간 인덱스
+    */
 
     private static int getIndex(int[] standards, int target) {
         int l = 0; // ※ 최솟값은 0
