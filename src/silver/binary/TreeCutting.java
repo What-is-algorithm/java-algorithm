@@ -18,7 +18,7 @@ public class TreeCutting {
 
         // 2. 입력
         st = new StringTokenizer(br.readLine(), " ");
-        for (int i = 0; i < tree.length; i ++) {
+        for (int i = 0; i < tree.length; i++) {
             tree[i] = Integer.parseInt(st.nextToken());
         }
 
@@ -31,11 +31,11 @@ public class TreeCutting {
     }
 
     /*
-    * 절단기에 설정할 수 있는 높이의 최댓값 구하기
-    * l : 절단기의 최소 길이
-    * r : 절단기의 최대 길이
-    * m : 절단기의 중간 길이
-    */
+     * 절단기에 설정할 수 있는 높이의 최댓값 구하기
+     * l : 절단기의 최소 길이
+     * r : 절단기의 최대 길이
+     * m : 절단기의 중간 길이
+     */
 
     private static long getMaxTreeLength(int[] tree, int target) {
         long l = 0;
@@ -46,7 +46,7 @@ public class TreeCutting {
             long m = l + (r - l) / 2;
             long treeLengthSum = 0;
 
-            for (int i = 0; i < tree.length; i ++) {
+            for (int i = 0; i < tree.length; i++) {
                 if (tree[i] >= m) {
                     treeLengthSum += tree[i] - m;
                 }
