@@ -25,7 +25,7 @@ public class CableCutting {
         Arrays.sort(cables);
 
         // 4. 출력
-        System.out.println(MaxCableLength(cables, n));
+        System.out.println(getMaxCableLength(cables, n));
         br.close();
     }
 
@@ -37,7 +37,7 @@ public class CableCutting {
     * m : 자를 랜선의 중간 길이
     */
 
-    private static long MaxCableLength(int[] cables, int target) {
+    private static long getMaxCableLength(int[] cables, int target) {
         long l = 0;
         long r = cables[cables.length - 1]; // 이번엔 배열 내에 원소가 위치한 인덱스가 아니라 배열의 원소를 이용하여 특정 값 자체를 구하는 것
         long maxLength = 0;
