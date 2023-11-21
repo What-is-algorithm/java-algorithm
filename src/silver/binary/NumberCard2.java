@@ -43,7 +43,7 @@ public class NumberCard2 {
      * 값의 개수 구하기 (단, 중복 원소를 고려해야 함)
      * l : 최소 인덱스
      * r : 최대 인덱스 (이때, 전체 배열 길이 그대로)
-     * m : 중간 인덱스
+     * m : 찾고자 하는 값의 인덱스
      * lower bound(= 하한 값) : 찾고자 하는 값 이상의 값이 처음으로 나타나는 위치
      * upper bound(= 상한 값) : 찾고자 하는 값을 초과한 값을 처음 만나는 위치
      * target <= middle, upper bound = middle

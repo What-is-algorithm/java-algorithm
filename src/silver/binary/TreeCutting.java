@@ -34,7 +34,7 @@ public class TreeCutting {
      * 절단기에 설정할 수 있는 높이의 최댓값 구하기
      * l : 절단기의 최소 길이
      * r : 절단기의 최대 길이
-     * m : 절단기의 중간 길이
+     * m : 구하고자 하는 절단기의 최대 높이
      */
 
     private static long getMaxTreeLength(int[] tree, int target) {

@@ -49,7 +49,7 @@ public class NumberSearch {
     * 값 구하기
     * l : 최소 인덱스 (단, 0부터 시작)
     * r : 최대 인덱스 (단, 전체 배열의 길이 - 1)
-    * m : 중간 인덱스
+    * m : 찾고자 하는 값이 가진 인덱스
     */
 
     private static int getIndex(int[] standards, int target) {

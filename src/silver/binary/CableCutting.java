@@ -34,7 +34,7 @@ public class CableCutting {
     -> 만들 수 있는 랜선의 최대 길이 구하기
     * l : 자를 랜선의 최소 길이
     * r : 자를 랜선의 최대 길이
-    * m : 자를 랜선의 중간 길이
+    * m : 자르고자 하는 랜선의 최대 길이
     */
 
     private static long getMaxCableLength(int[] cables, int target) {
