@@ -40,6 +40,7 @@ public class NumberCard2 {
     }
 
     /*
+    https://st-lab.tistory.com/267
      * 값의 개수 구하기 (단, 중복 원소를 고려해야 함)
      * l : 최소 인덱스
      * r : 최대 인덱스 (이때, 전체 배열 길이 그대로)
@@ -55,10 +56,10 @@ public class NumberCard2 {
         int l = 0;
         int r = card.length;
 
-        while (l < r) {
+        while (l < r) { // ※ l <= r & l - 1
             int m = l + (r - l) / 2;
 
-            if (target < card[m]) {
+            if (target < card[m]) { // lower & upper 변경점
                 r = m;
             } else {
                 l = m + 1;
@@ -75,7 +76,7 @@ public class NumberCard2 {
         while (l < r) {
             int m = l + (r - l) / 2;
 
-            if (target <= card[m]) {
+            if (target <= card[m]) { // lower & upper 변경점
                 r = m;
             } else {
                 l = m + 1;
