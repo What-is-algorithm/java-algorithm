@@ -30,16 +30,16 @@ public class CableCutting {
     }
 
     /*
-    parametric search = 이분 탐색을 응용한 최솟값 또는 최댓값 구하기
-    -> 만들 수 있는 랜선의 최대 길이 구하기
-    * l : 자를 랜선의 최소 길이
-    * r : 자를 랜선의 최대 길이
-    * m : 자르고자 하는 랜선의 최대 길이
-    */
+     * 만들 수 있는 랜선의 최대 길이 구하기
+     * lower bound(= 하한 값) : 찾고자 하는 값 이상의 값이 처음으로 나타나는 위치
+     *
+     *
+     * m (구하고자 하는 값) : 랜선 길이(값) <-> 인덱스
+     */
 
     private static long getMaxCableLength(int[] cables, int target) {
-        long l = 0;
-        long r = cables[cables.length - 1]; // 이번엔 배열 내에 원소가 위치한 인덱스가 아니라 배열의 원소를 이용하여 특정 값 자체를 구하는 것
+        long l = 1;
+        long r = cables[cables.length - 1];
         long maxLength = 0;
 
         while (l <= r) {
@@ -50,11 +50,7 @@ public class CableCutting {
                 cableCnt += (cables[i] / m);
             }
 
-            if (target == cableCnt) {
-                maxLength = m;
-                return maxLength;
-            }
-            if (target < cableCnt) {
+            if (target <= cableCnt) {
                 // 목표 개수가 자른 케이블의 개수보다 작다면
                 // 랜선을 작게 작게 잘랐다는 것 = 자를 랜선의 길이를 늘려야 함
                 maxLength = m;

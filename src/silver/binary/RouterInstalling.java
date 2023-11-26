@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-// ※ 틀린 풀이입니다, 계속 원인을 찾고 있는데 모르겠군요..
 public class RouterInstalling {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -31,26 +30,18 @@ public class RouterInstalling {
     }
 
     /*
-     * 가장 인접한 공유기 사이의 최대 거리 구하기
-     * -> 최소 거리(= 인접한 공유기 사이의 거리)가 최대가 될 때의 거리 구하기
-     * l : 인접한 공유기 사이의 최소 거리
-     * r : 인접한 공유기 사이의 최대 거리
-     * m : 찾고자 하는 인접한 공유기 사이의 최소 거리가 "최대"가 될 때의 거리
-     * = 설치한 공유기의 수가 설치할 수 있는 공유기의 수와 같아졌을 때, 최대 거리인지 알 수 없으므로
-     * 구하고자 하는 최소 거리를 늘리면서 최대인 경우의 거리
+     * 가장 인접한 두 공유기 사이의 거리가 최대일 경우를 구하기
+     * = 설치해야 할 공유기의 개수(= c)와 같은 거리 중 최대로 가질 수 있는 최소 거리 (마지막으로 설치한 곳 + 최대 거리)
+     * = 최소 거리 중 최대 값 찾기
+     *
+     * lower bound(= 하한 값) : 찾고자 하는 값 이상의 값이 처음으로 나타나는 위치
+     * = lower bound로 찾고자 하는 값을 기준으로 점진적으로 증가시켜나가면서 찾고자 하는 값이 마지막으로 나타나는 위치(여기선 값), 즉 최댓값을 찾는 것
+     * m (구하고자 하는 값) : 거리(값) <-> 인덱스
      */
 
-    /*
-     * - 최소 거리에 따라 설치할 수 있는 공유기의 수(= c)가 정해짐
-     * - 이때, 최소 거리가 최대일 때를 찾는 것
-     * 1. 첫 번째 집에 공유기를 설치
-     * 2. 최소 거리를 설정
-     * 3. 직전에 공유기를 설치한 집으로부터 최소 거리만큼 거리를 두고 있는 집들 중, 가장 가까운 거리에 공유기를 설치
-     * 4. 반복한 후, 설치된 공유기의 수와 c를 비교
-     */
 
     private static int getMaxDistance(int houseCnt, int target, int[] house) {
-        int l = 0;
+        int l = 1; // 거리(값)의 초기값
         int r = house[houseCnt - 1];
         int maxDistance = 0;
 
@@ -66,11 +57,7 @@ public class RouterInstalling {
                 }
             }
 
-            if (target == installRouter) {
-                maxDistance = m;
-                return maxDistance;
-            }
-            if (target < installRouter) {
+            if (target <= installRouter) { // lower bound -> "<="
                 // 가지고 있는 공유기(= 설치 해야 할 공유기)가 설치한 공유기의 수보다 작다면
                 // 너무 많이 설치했다는 것 = 최소 거리를 작게 잡았다는 것 = 최소 거리를 늘려야 함
                 maxDistance = m;
