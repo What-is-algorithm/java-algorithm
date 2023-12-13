@@ -17,7 +17,7 @@ public class NumberCard {
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
         HashMap<String, Integer> map = new HashMap<>();
-        for (int i = 0; i < n; i ++) {
+        for (int i = 0; i < n; i++) {
             map.put(st.nextToken(), 0);
         }
 
@@ -25,7 +25,7 @@ public class NumberCard {
         st = new StringTokenizer(br.readLine(), " ");
 
         // 2. 로직
-        for (int i = 0; i < m; i ++) {
+        for (int i = 0; i < m; i++) {
             if (map.get(st.nextToken()) != null) {
                 sb.append(1).append(" ");
             } else {
