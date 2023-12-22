@@ -3,7 +3,7 @@ package silver.sort;
 import java.io.*;
 import java.util.Arrays;
 
-// ※ 시간 제한 : 5s, 메모리 제한 : 512MB
+// ※ 시간 제한 : 3s, 메모리 제한 : 512MB
 // ※ O(10,000,000) -> O(n)
 public class NumberSorting3 {
     public static void main(String[] args) throws IOException {

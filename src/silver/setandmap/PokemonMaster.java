@@ -20,13 +20,13 @@ public class PokemonMaster {
         HashMap<String, Integer> strGuide = new HashMap<>();
         HashMap<Integer, String> intGuide = new HashMap<>();
 
-        for (int i = 1; i <= n; i ++) {
+        for (int i = 1; i <= n; i++) {
             String name = br.readLine();
             strGuide.put(name, i);
             intGuide.put(i, name);
         }
 
-        for (int i = 0; i < m; i ++) {
+        for (int i = 0; i < m; i++) {
             String name = br.readLine();
             // (ASCII) 1(49) ~ 9(57)
             if (49 <= name.charAt(0) && name.charAt(0) <= 57) {

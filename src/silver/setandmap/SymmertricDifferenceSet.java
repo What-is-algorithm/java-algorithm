@@ -18,12 +18,12 @@ public class SymmertricDifferenceSet {
         Set<Integer> setB = new HashSet<>();
 
         st = new StringTokenizer(br.readLine(), " ");
-        for (int i = 0; i < setANum; i ++) {
+        for (int i = 0; i < setANum; i++) {
             setA.add(Integer.parseInt(st.nextToken()));
         }
 
         st = new StringTokenizer(br.readLine(), " ");
-        for (int i = 0; i < setBNum; i ++) {
+        for (int i = 0; i < setBNum; i++) {
             setB.add(Integer.parseInt(st.nextToken()));
         }
 
