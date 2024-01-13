@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 public class Main {
     private static int result = 0;
-    private static int[] table; // idx: col, element: row
+    private static int[] table; // idx: row, element: col
     private static int N;
 
     public static void main(String[] args) throws IOException {
@@ -18,15 +18,15 @@ public class Main {
 
         System.out.println(result);
     }
-    private static void scan(int y) {
-        if (y == N) {
+    private static void scan(int depth) {
+        if (depth == N) {
             result++;
             return;
         }
         for (int i = 0; i < N; i++) {
-            table[y] = i;
-            if (isPossible(y)) {
-                scan(y + 1);
+            table[depth] = i;
+            if (isPossible(depth)) {
+                scan(depth + 1);
             }
         }
     }
