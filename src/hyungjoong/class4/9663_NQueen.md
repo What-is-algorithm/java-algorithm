@@ -41,6 +41,29 @@ public class Main {
         }
         return true;
     }
+//    private static void scan(int y, int N) {
+//        if (y == N) {
+//            result++;
+//            return;
+//        }
+//
+//        for (int x = 0; x < N; x++) {
+//            int col = x;
+//            int diagonal = y - x;
+//            int antiDiagonal = y + x;
+//            if (cols.contains(col) || diagonals.contains(diagonal) || antiDiagonals.contains(antiDiagonal)) {
+//                continue;
+//            }
+//            cols.add(col);
+//            diagonals.add(diagonal);
+//            antiDiagonals.add(antiDiagonal);
+//            scan(y + 1, N);
+//            cols.remove(col);
+//            diagonals.remove(diagonal);
+//            antiDiagonals.remove(antiDiagonal);
+//        }
+//
+//    }
 }
 ```
 
