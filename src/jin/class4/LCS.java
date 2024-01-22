@@ -5,7 +5,9 @@ import java.io.*;
 // [G5] 9251. LCS
 public class LCS {
     // dp[N][M]
+    // 비교하는 두 문자가 같다면 현재 문자가 LCS에 속하게 된다 -> 이전 LCS 길이에서 1을 더한다.
     // if s1.charAt(i) == s2.charAt(j) -> dp[i][j] = dp[i-1][j-1] + 1
+    // 비교하는 두 문자가 다르면 현재 문자가 LCS에 속하지 않는다. -> 이전까지 LCS 중 더 긴 것 선택한다.
     // else -> dp[i][j] = max(dp[i-1][j], dp[i][j-1]
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
