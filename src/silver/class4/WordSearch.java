@@ -7,8 +7,7 @@ package silver.class4;
 // Todo 재귀를 활용한 백트래킹
 // Todo 이유는 ..
 class Solution {
-    public:
-    bool exist(vector<vector<char>>& board, string word) {
-
+    public boolean exist(char[][] board, String word) {
+        // ..
     }
-};
+}
