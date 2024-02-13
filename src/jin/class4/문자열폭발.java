@@ -16,29 +16,29 @@ public class 문자열폭발 {
         String data = br.readLine().trim();
         String boom = br.readLine().trim();
 
-        List<Character> list = new LinkedList<>();
+        Deque<Character> stack = new ArrayDeque<>();
         char lastChar = boom.charAt(boom.length() - 1);
 
         for (int i = 0; i < data.length(); i++) {
-            list.add(data.charAt(i));
+            stack.addLast(data.charAt(i));
 
-            if (data.charAt(i) == lastChar && list.size() >= boom.length()) {
+            if (data.charAt(i) == lastChar && stack.size() >= boom.length()) {
                 StringBuilder temp = new StringBuilder();
                 for (int j = 0; j < boom.length(); j++) {
-                    temp.append(list.remove(list.size() - 1));
+                    temp.append(stack.removeLast());
                 }
                 temp = reverse(temp.toString());
 
                 if (!Objects.equals(temp.toString(), boom)) {
                     for (int j = 0; j < boom.length(); j++) {
-                        list.add(temp.charAt(j));
+                        stack.addLast(temp.charAt(j));
                     }
                 }
             }
         }
 
         StringBuilder result = new StringBuilder();
-        for (char c : list) {
+        for (char c : stack) {
             result.append(c);
         }
         System.out.println(result.length() > 0 ? result : "FRULA");
