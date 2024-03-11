@@ -1,6 +1,6 @@
 package jin.class4;
 
-// [G2] 11444. 피보나치 수 6 -> 미완성
+// [G2] 11444. 피보나치 수 6 완성
 
 import java.util.Scanner;
 
@@ -13,12 +13,6 @@ public class 피보나치수6 {
         Scanner sc = new Scanner(System.in);
         long n = sc.nextLong();
 
-        if (n == 0) {
-            System.out.println(0);
-            sc.close();
-            return;
-        }
-
         long[][] arr = {{1L, 1L}, {1L, 0L}};
         long[][] result = power(arr, n - 1);
         System.out.println(result[0][0]);
@@ -26,7 +20,7 @@ public class 피보나치수6 {
     }
 
     private static long[][] power(long[][] arr, long n) {
-        if (n == 1) {
+        if (n == 1 || n == 0) {
             return arr;
         }
 
